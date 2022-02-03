@@ -154,7 +154,9 @@ public class BurpExtender implements IBurpExtender, IContextMenuFactory, IExtens
 		cs.gridx = 0; cs.gridwidth = 2;
 		for (String line : helpText) {
 			cs.gridy++;
-			panel.add(new JLabel(line), cs);
+			JLabel lineLabel = new JLabel(line);
+			lineLabel.putClientProperty("html.disable", null);
+			panel.add(lineLabel, cs);
 		}
 
 		JButton btnApply = new JButton("Apply");
