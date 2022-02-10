@@ -7,21 +7,11 @@
 			</fileset>
 		</zip>
 	</target>
-	<target name="test" depends="classes">
-		<java classname="org.junit.runner.JUnitCore" classpath="build">
-			<arg value="burp.CommentatorTest"/>
-			<classpath>
-				<fileset dir="lib">
-					<include name="**/*.jar"/>
-				</fileset>
-			</classpath>
-		</java>
-	</target>
 	<target name="classes">
 		<mkdir dir="build"/>
 		<javac srcdir="src" destdir="build" includeantruntime="false">
 			<classpath>
-				<fileset dir="lib">
+				<fileset dir="build">
 					<include name="**/*.jar"/>
 				</fileset>
 			</classpath>
